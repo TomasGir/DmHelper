@@ -1,0 +1,20 @@
+<div *ngIf="childMessage">
+  <p *ngIf="childMessage.name">{{childMessage.name}}</p>
+  <p *ngIf="childMessage.desc">Desc - {{childMessage.desc}}</p>
+  <p *ngIf="childMessage.higher_level">High level - {{childMessage.higher_level}}</p>
+  <p *ngIf="childMessage.range">Range - {{childMessage.range}}</p>
+  <p *ngIf="childMessage.components">Components - {{childMessage.components}}</p>
+  <p *ngIf="childMessage.material">Material - {{childMessage.material}}</p>
+  <p *ngIf="childMessage.ritual">Ritual - {{childMessage.ritual}}</p>
+  <p *ngIf="childMessage.duration">Duration - {{childMessage.duration}}</p>
+  <p *ngIf="childMessage.concentration">Concentration - {{childMessage.concentration}}</p>
+  <p *ngIf="childMessage.casting_time">Casting time - {{childMessage.casting_time}}</p>
+  <p *ngIf="childMessage.level">childMessage level - {{childMessage.level}}</p>
+  <p *ngIf="childMessage.school">School name - {{childMessage.school.name}}</p>
+  <div *ngFor="let classes of childMessage.classes">
+    <p>Class - {{classes.name}}</p>
+  </div>
+  <div *ngFor="let subclasses of childMessage.subclasses">
+    <p>Subclass - {{subclasses.name}}</p>
+  </div>
+</div>

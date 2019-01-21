@@ -1,0 +1,35 @@
+.wrapper{
+  background-image: url("/assets/paper1.png");
+  background-repeat: repeat-y;
+  background-size: contain;
+  background-position-y: top;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 10px;
+  min-height: 100vh;
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.header{
+  width: 100%;
+  button{
+    height: 20px;
+  }
+}

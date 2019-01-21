@@ -1,0 +1,24 @@
+<div *ngIf="childMessage">
+  <p *ngIf="childMessage.name">{{childMessage.name}}</p>
+  <p *ngIf="childMessage.cost">{{childMessage.cost.quantity}} {{childMessage.cost.unit}}</p>
+  <p>{{childMessage.equipment_category}} {{childMessage.weapon_category}} {{childMessage.category_range}}</p>
+  <p *ngIf="childMessage.damage">Damage - {{childMessage.damage.dice_count}}d{{childMessage.damage.dice_value}}</p>
+  <p *ngIf="childMessage.two_handed_damage">2-hands - {{childMessage.two_handed_damage.dice_count}}
+    d{{childMessage.two_handed_damage.dice_value}}</p>
+  <p *ngIf="childMessage.throw_range">Range - {{childMessage.throw_range.normal}}/{{childMessage.throw_range.long}}</p>
+  <p *ngIf="childMessage.weight">Weight - {{childMessage.weight}}</p>
+  <p *ngIf="childMessage.special">Special - {{childMessage.special}}</p>
+  <p *ngIf="childMessage.armor_category">Armor type - {{childMessage.armor_category}}</p>
+  <p *ngIf="childMessage.armor_class">Armor class - {{childMessage.armor_class.base}}</p>
+  <p *ngIf="childMessage.str_minimum">Strength requirements - {{childMessage.str_minimum}}</p>
+  <p *ngIf="childMessage.stealth_disadvantage === true">Stealth disadvantage</p>
+  <p *ngIf="childMessage.gear_category">Gear category - {{childMessage.gear_category}}</p>
+  <p *ngIf="childMessage.desc">Description - {{childMessage.desc}}</p>
+  <p *ngIf="childMessage.tool_category">Tool category - {{childMessage.tool_category}}</p>
+  <p *ngIf="childMessage.vehicle_category">Vehicle category - {{childMessage.vehicle_category}}</p>
+  <p *ngIf="childMessage.speed">Speed - {{childMessage.speed.quantity}} {{childMessage.speed.unit}}</p>
+  <p *ngIf="childMessage.capacity">Capacity - {{childMessage.capacity}}</p>
+  <p *ngFor="let properties of childMessage.properties">
+    Properties - {{properties.name}}
+  </p>
+</div>

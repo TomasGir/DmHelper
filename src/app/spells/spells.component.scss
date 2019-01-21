@@ -1,0 +1,41 @@
+.spellBook {
+  display: flex;
+  position: relative;
+
+  .spellWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    width: 66%;
+
+    .spellCard {
+      border: 1px solid red;
+      border-radius: 10px;
+      margin: 10px;
+      width: 45%;
+      box-sizing: border-box;
+      padding: 0 20px;
+      display: table;
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .details-wrapper {
+    position: fixed;
+    width: 33%;
+    right: 3%;
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    .detail {
+      height: 80vh;
+      overflow: auto;
+    }
+  }
+}

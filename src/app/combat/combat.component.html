@@ -1,0 +1,4 @@
+<h1>Initiative order</h1>
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+  <div class="example-box" *ngFor="let fighters of participants" cdkDrag>{{fighters}}</div>
+</div>

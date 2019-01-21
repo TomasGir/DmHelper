@@ -1,0 +1,14 @@
+<div class="diceWrapper">
+  <form>
+    <input type="text" class="form-control" placeholder="1"
+           aria-describedby="basic-addon1" value="1" #name>
+    <button (click)="getRand(20, name.value)">d20</button>
+    <button (click)="getRand(12, name.value)">d12</button>
+    <button (click)="getRand(10, name.value)">d10</button>
+    <button (click)="getRand(8, name.value)">d8</button>
+    <button (click)="getRand(6, name.value)">d6</button>
+    <button (click)="getRand(4, name.value)">d4</button>
+    <button (click)="getRand(100, name.value)">d100</button>
+    <p matTooltip="Dice rolled {{rollVal}}">{{rollSum}}</p>
+  </form>
+</div>

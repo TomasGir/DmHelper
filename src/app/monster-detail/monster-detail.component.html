@@ -1,0 +1,115 @@
+<div class="monsterWrapper">
+  <div class="monsterCard" *ngIf="childMessage">
+    <div class="monsterHeader">
+      <h1>{{childMessage.name}} CR {{childMessage.challenge_rating}}</h1>
+      <p>{{childMessage.size}} {{childMessage.type}} {{childMessage.subtype}} {{childMessage.alignment}}</p>
+      <div class="punctuation">
+        <div class="line"></div>
+        <div class="lineTip"></div>
+      </div>
+    </div>
+    <div class="monsterStats">
+      <div class="left">
+        <mat-grid-list cols="2" rowHeight="1:1">
+          <mat-grid-tile>
+            <div class="monsterBattleStats">
+              <p><span>Armor class</span> - {{childMessage.armor_class}}</p>
+              <p matTooltip="Hit dice {{childMessage.hit_dice}}"><span>Hit points</span> - {{childMessage.hit_points}}</p>
+              <p><span>Speed</span> - {{childMessage.speed}}</p>
+            </div>
+            <div class="punctuation">
+              <div class="line"></div>
+              <div class="lineTip"></div>
+            </div>
+            <div class="monsterStatistics">
+              <p *ngIf="childMessage.strength">STR - {{childMessage.strength}}</p>
+              <p *ngIf="childMessage.dexterity">DEX - {{childMessage.dexterity}}</p>
+              <p *ngIf="childMessage.constitution">CON - {{childMessage.constitution}}</p>
+              <p *ngIf="childMessage.intelligence">INT - {{childMessage.intelligence}}</p>
+              <p *ngIf="childMessage.wisdom">WIS - {{childMessage.wisdom}}</p>
+              <p *ngIf="childMessage.charisma">CHA - {{childMessage.charisma}}</p>
+            </div>
+            <div class="punctuation">
+              <div class="line"></div>
+              <div class="lineTip"></div>
+            </div>
+            <div class="monsterSaves">
+              <p *ngIf="childMessage.strength_save">Str save - {{childMessage.strength_save}}</p>
+              <p *ngIf="childMessage.dexterity_save">Dex save - {{childMessage.dexterity_save}}</p>
+              <p *ngIf="childMessage.constitution_save">Con save - {{childMessage.constitution_save}}</p>
+              <p *ngIf="childMessage.intelligence_save">Int save - {{childMessage.intelligence_save}}</p>
+              <p *ngIf="childMessage.wisdom_save">Wis save - {{childMessage.wisdom_save}}</p>
+              <p *ngIf="childMessage.charisma_save">Cha save - {{childMessage.charisma_save}}</p>
+            </div>
+            <div class="punctuation">
+              <div class="line"></div>
+              <div class="lineTip"></div>
+            </div>
+            <div class="monsterAbilities">
+              <p *ngIf="childMessage.animal_handling">Animal handling - {{childMessage.animal_handling}}</p>
+              <p *ngIf="childMessage.arcane">Arcane - {{childMessage.arcane}}</p>
+              <p *ngIf="childMessage.athletics">Athletics - {{childMessage.athletics}}</p>
+              <p *ngIf="childMessage.deception">Deception - {{childMessage.deception}}</p>
+              <p *ngIf="childMessage.history">History - {{childMessage.history}}</p>
+              <p *ngIf="childMessage.insight">Insight - {{childMessage.insight}}</p>
+              <p *ngIf="childMessage.intimidation">Intimidation - {{childMessage.intimidation}}</p>
+              <p *ngIf="childMessage.investigation">Investigation - {{childMessage.investigation}}</p>
+              <p *ngIf="childMessage.medicine">Medicine - {{childMessage.medicine}}</p>
+              <p *ngIf="childMessage.nature">Nature - {{childMessage.nature}}</p>
+              <p *ngIf="childMessage.perception">Perception - {{childMessage.perception}}</p>
+              <p *ngIf="childMessage.performance">Performance - {{childMessage.performance}}</p>
+              <p *ngIf="childMessage.persuasion">Persuasion - {{childMessage.persuasion}}</p>
+              <p *ngIf="childMessage.religion">Religion - {{childMessage.religion}}</p>
+              <p *ngIf="childMessage.sleight_of_hand">Sleight of hand - {{childMessage.sleight_of_hand}}</p>
+              <p *ngIf="childMessage.stealth">Stealth - {{childMessage.stealth}}</p>
+              <p *ngIf="childMessage.survival">Survival - {{childMessage.survival}}</p>
+            </div>
+            <div class="punctuation">
+              <div class="line"></div>
+              <div class="lineTip"></div>
+            </div>
+            <div class="monsterResistance">
+              <p *ngIf="childMessage.damage_vulnerabilities">Vulnerabilities - {{childMessage.damage_vulnerabilities}}</p>
+              <p *ngIf="childMessage.damage_resistances">Resistances - {{childMessage.damage_resistances}}</p>
+              <p *ngIf="childMessage.condition_immunities">Immunities - {{childMessage.condition_immunities}}</p>
+            </div>
+            <div class="punctuation" *ngIf="childMessage.damage_vulnerabilities">
+              <div class="line"></div>
+              <div class="lineTip"></div>
+            </div>
+            <div class="monsterSense">
+              <p *ngIf="childMessage.senses">{{childMessage.senses}}</p>
+              <p *ngIf="childMessage.languages">{{childMessage.languages}}</p>
+            </div>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <img src="{{childMessage.image}}">
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+    <h1>Powers</h1>
+    <div class="monsterPowers" *ngFor="let ability of childMessage.special_abilities">
+      <p *ngIf="ability.name" ngClass="title"><span>{{ability.name}}</span> - {{ability.desc}}</p>
+    </div>
+    <div class="punctuation">
+      <div class="line"></div>
+      <div class="lineTip"></div>
+    </div>
+    <h1>Actions</h1>
+    <div class="monsterActions" *ngFor="let action of childMessage.actions">
+      <p *ngIf="action.name" ngClass="title"><span>{{action.name}}</span> - {{action.desc}}</p>
+    </div>
+    <div class="punctuation">
+      <div class="line"></div>
+      <div class="lineTip"></div>
+    </div>
+    <h1 *ngIf="childMessage.legendary_actions">Legendary actions</h1>
+    <div class="monsterLegendaryActions" *ngFor="let legendary_action of childMessage.legendary_actions">
+      <p *ngIf="legendary_action.name" ngClass="title"><span>{{legendary_action.name}}</span> - {{legendary_action.desc}}</p>
+    </div>
+  </div>
+  <div *ngIf="!childMessage">
+    <h1>Details</h1>
+  </div>
+</div>

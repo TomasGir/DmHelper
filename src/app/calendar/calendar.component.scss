@@ -1,0 +1,16 @@
+.calendar {
+  width: 50%;
+
+  .calendarNavigation {
+    margin-bottom: 20px;
+  }
+
+  .weekWrapper {
+    width: 500px;
+    .day {
+      padding: 10px;
+      width: 6%;
+      display: inline-table;
+    }
+  }
+}

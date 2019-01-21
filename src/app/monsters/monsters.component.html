@@ -1,0 +1,34 @@
+<form class="search-field">
+  <mat-form-field class="search-field-full">
+    <input matInput placeholder="Search" type="text" [(ngModel)]="searchTerm" name="monster">
+  </mat-form-field>
+</form>
+<div class="bestiary">
+  <div class="monsterWrapper">
+    <mat-card class="example-card" *ngFor="let monster of monsters | monsterFilter: searchTerm">
+      <mat-card-header>
+        <mat-card-title (click)="navigate(monster.index)">
+          <p>{{monster.name}}
+            CR {{monster.challenge_rating}}</p>
+        </mat-card-title>
+        <mat-card-subtitle>
+          {{monster.type}}
+        </mat-card-subtitle>
+      </mat-card-header>
+      <div class="imgContainer">
+        <img mat-card-image src="{{monster.image}}" (click)="navigate(monster.index)" class="image">
+      </div>
+      <mat-card-content>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="warn">Add combat</button>
+        <button mat-raised-button>Add story</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div class="details-wrapper">
+    <div class="detail">
+    <app-monster-detail [childMessage]="send"></app-monster-detail>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,85 @@
+[{
+  "index": 1,
+  "name": "Deepwinter",
+  "alterName": "Hammer",
+  "date": {
+    "length": 31
+  }
+}, {
+  "index": 2,
+  "name": "The Claw of Winter",
+  "alterName": "Alturiak",
+  "date": {
+    "length" : 28
+  }
+}, {
+  "index": 3,
+  "name": "The Claw of the Sunsets",
+  "alterName": "Ches",
+  "date": {
+    "length" : 31
+  }
+}, {
+  "index": 4,
+  "name": "The Claw of the Storms",
+  "alterName": "Tarsakh",
+  "date": {
+    "length" : 30
+  }
+}, {
+  "index": 5,
+  "name": "The Melting",
+  "alterName": "Mirtul",
+  "date": {
+    "length" : 31
+  }
+}, {
+  "index": 6,
+  "name": "The Time of Flowers",
+  "alterName": "Kythorn",
+  "date": {
+    "length" : 30
+  }
+}, {
+  "index": 7,
+  "name": "Summertide",
+  "alterName": "Flamerule",
+  "date": {
+    "length" : 31
+  }
+}, {
+  "index": 8,
+  "name": "Highsun",
+  "alterName": "Eleasis",
+  "date": {
+    "length" : 31
+  }
+}, {
+  "index": 9,
+  "name": "The Fading",
+  "alterName": "Eleint",
+  "date": {
+    "length" : 30
+  }
+}, {
+  "index": 10,
+  "name": "Leaffall",
+  "alterName": "Marpenoth",
+  "date": {
+    "length" : 31
+  }
+}, {
+  "index": 11,
+  "name": "The Rotting",
+  "alterName": "Uktar",
+  "date": {
+    "length" : 30
+  }
+}, {
+  "index": 12,
+  "name": "The Drawing Down",
+  "alterName": "Nightal",
+  "date": {
+    "length" : 31
+}
+}]

@@ -1,0 +1,15 @@
+<div class="calendar" *ngFor="let date of calendar" style="display: inline;">
+  <div *ngIf="currentMonth  == date.index">
+    <p>{{date.name}}</p>
+    <div class="calendarNavigation">
+      <button id="left" type="button" (click)="lastMonth()">Left</button>
+      <button id="right" type="button" (click)="nextMonth()">Right</button>
+    </div>
+    <div class="weekWrapper">
+      <div class="day" *ngFor="let dummy of ' '.repeat(date.date.length).split(''), let index = index">
+        {{ index + 1 }}
+        <br *ngIf="(index + 1) % 10 == 0">
+      </div>
+    </div>
+  </div>
+</div>
