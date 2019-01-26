@@ -3,20 +3,22 @@
     <input matInput placeholder="Search" type="text" [(ngModel)]="searchTerm" name="monster">
   </mat-form-field>
 </form>
+
 <div class="bestiary">
   <div class="monsterWrapper">
-    <mat-card class="example-card" *ngFor="let monster of monsters | monsterFilter: searchTerm">
+    <mat-card class="example-card" *ngFor="let monster of monsters$ | async | monsterFilter: searchTerm let i = index">
       <mat-card-header>
-        <mat-card-title (click)="navigate(monster.index)">
+        <mat-card-title (click)="navigate(monster)">
           <p>{{monster.name}}
             CR {{monster.challenge_rating}}</p>
+          <input [(ngModel)]="monster.name" *ngIf="editState">
         </mat-card-title>
         <mat-card-subtitle>
           {{monster.type}}
         </mat-card-subtitle>
       </mat-card-header>
       <div class="imgContainer">
-        <img mat-card-image src="{{monster.image}}" (click)="navigate(monster.index)" class="image">
+        <img mat-card-image src="{{monster.image}}" (click)="navigate(monster)" class="image">
       </div>
       <mat-card-content>
       </mat-card-content>
@@ -28,7 +30,7 @@
   </div>
   <div class="details-wrapper">
     <div class="detail">
-    <app-monster-detail [childMessage]="send"></app-monster-detail>
+      <app-monster-detail [childMessage]="send"></app-monster-detail>
     </div>
   </div>
 </div>
