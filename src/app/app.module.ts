@@ -22,9 +22,14 @@ import {MonsterFilterPipe} from './monsters/monster-filter.pipe';
 import {MonsterDetailFilterPipe} from './monster-detail/monster-detail-filter.pipe';
 import {ItemFilterPipe} from './items/item-filter.pipe';
 import {SpellFilterPipe} from './spells/spell-filter.pipe';
-import { SpellDetailsComponent } from './spell-details/spell-details.component';
-import { ItemDetailsComponent } from './item-details/item-details.component';
-import { CalendarComponent } from './calendar/calendar.component';
+import {SpellDetailsComponent} from './spell-details/spell-details.component';
+import {ItemDetailsComponent} from './item-details/item-details.component';
+import {CalendarComponent} from './calendar/calendar.component';
+
+import {StoreModule} from '@ngrx/store';
+import {MonsterReducer} from './post';
+import {EffectsModule} from '@ngrx/effects';
+import {MonsterEffects} from './post';
 
 
 @NgModule({
@@ -54,7 +59,12 @@ import { CalendarComponent } from './calendar/calendar.component';
     BrowserAnimationsModule,
     CustomModuleModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({
+      post: MonsterReducer
+    }),
+    EffectsModule.forRoot([MonsterEffects]),
+    EffectsModule.forFeature([MonsterEffects])
   ],
   exports: [
     CustomModuleModule
