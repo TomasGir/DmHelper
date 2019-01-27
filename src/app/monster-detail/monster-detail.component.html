@@ -3,10 +3,18 @@
     <div class="monsterHeader">
       <div class="monsterHeaderTop">
         <h1 *ngIf="!editState">{{childMessage.name}} CR {{childMessage.challenge_rating}}</h1>
-        <input *ngIf="editState" [(ngModel)]="childMessage.name">
+        <mat-form-field *ngIf="editState" appearance="fill">
+          <input matInput type="text" [(ngModel)]="childMessage.name">
+        </mat-form-field>
         <p *ngIf="editState">CR</p>
-        <input *ngIf="editState" [(ngModel)]="childMessage.challenge_rating">
-        <button (click)="changeState()">Edit</button>
+        <mat-form-field *ngIf="editState" appearance="fill">
+          <input matInput type="text" [(ngModel)]="childMessage.challenge_rating">
+        </mat-form-field>
+        <button (click)="changeState()">
+        <i class="material-icons">
+          edit
+        </i>
+        </button>
       </div>
       <p>{{childMessage.size}} {{childMessage.type}} {{childMessage.subtype}} {{childMessage.alignment}}</p>
       <div class="punctuation">
@@ -19,7 +27,12 @@
         <mat-grid-list cols="2" rowHeight="1:1">
           <mat-grid-tile>
             <div class="monsterBattleStats">
-              <p><span>Armor class</span> - {{childMessage.armor_class}}</p>
+              <p *ngIf="!editState"><span>Armor class</span> - {{childMessage.armor_class}}</p>
+              <p *ngIf="editState"><span>Armor class</span> -
+                <mat-form-field appearance="fill">
+                  <input matInput type="text" [(ngModel)]="childMessage.armor_class">
+                </mat-form-field>
+              </p>
               <p matTooltip="Hit dice {{childMessage.hit_dice}}"><span>Hit points</span> - {{childMessage.hit_points}}
               </p>
               <p><span>Speed</span> - {{childMessage.speed}}</p>

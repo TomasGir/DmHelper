@@ -15,12 +15,17 @@
 
         p {
           font-weight: bold;
-          margin: 0;
+          margin: 25px 0 0 0;
         }
 
         button {
           margin-left: auto;
           order: 2;
+          height: 40px;
+          width: 40px;
+          background: transparent;
+          border: none;
+          cursor: pointer;
         }
       }
     }
@@ -69,4 +74,13 @@
     justify-content: flex-start !important;
     align-items: flex-start !important;
   }
+}
+
+::ng-deep .mat-input-wrapper{
+  width:400px !important;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex{
+  padding: 0;
+  width: 150px;
 }
