@@ -31,12 +31,10 @@ export class MonstersComponent implements OnInit, AfterContentChecked, AfterView
 
   navigate(thing) {
     this.send = {};
-    console.log(thing);
     this.send = thing;
   }
 
   ngOnInit() {
-    // debugger;
     this.monsters$ = this.store.select(Past.getAllMonsters);
     this.store.dispatch(new PostActions.LoadData());
   }

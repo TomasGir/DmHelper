@@ -15,7 +15,6 @@ export class MonsterService {
   }
 
   getMonsters(): Observable<Monster[]> {
-    // debugger;
     return this.httpService.get<Monster[]>(this.monsterUrl);
   }
 

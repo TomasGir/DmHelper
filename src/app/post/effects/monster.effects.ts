@@ -17,7 +17,6 @@ export class MonsterEffects {
   loadMonsters$ = this.actions$
     .pipe(ofType(PostActions.LOAD_DATA),
       switchMap(() => {
-        // debugger;
         return this.monsterService.getMonsters()
           .pipe(
             map(monster => new PostActions.LoadDataSuccess(monster)),
