@@ -1,9 +1,8 @@
-import {Component, OnInit, AfterContentChecked, AfterViewChecked} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Injectable} from '@angular/core';
 import {Monster} from '../services/monster_service/monster';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
-import * as PostActions from '../post/actions/monster.actions';
 import * as Past from '../post';
 
 @Component({
@@ -13,7 +12,7 @@ import * as Past from '../post';
 })
 
 @Injectable()
-export class MonstersComponent implements OnInit, AfterContentChecked, AfterViewChecked {
+export class MonstersComponent implements OnInit {
   monsters: Monster[];
   monsters$: Observable<Monster[]>;
   searchTerm: string;
@@ -36,16 +35,5 @@ export class MonstersComponent implements OnInit, AfterContentChecked, AfterView
 
   ngOnInit() {
     this.monsters$ = this.store.select(Past.getAllMonsters);
-    this.store.dispatch(new PostActions.LoadData());
-  }
-
-  changeState() {
-    (this.editState) ? this.editState = false : this.editState = true;
-  }
-
-  ngAfterContentChecked(): void {
-  }
-
-  ngAfterViewChecked(): void {
   }
 }
