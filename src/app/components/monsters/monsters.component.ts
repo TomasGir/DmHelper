@@ -32,6 +32,10 @@ export class MonstersComponent implements OnInit {
     this.send = dataObject;
   }
 
+  setCategory(category) {
+    this.searchTerm = category;
+  }
+
   ngOnInit() {
     this.monsters$ = this.store.select(Past.getAllMonsters);
   }

@@ -4,6 +4,24 @@
   </mat-form-field>
 </form>
 
+<mat-card-actions>
+  <button (click)="setCategory('Aberration')">Aberration</button>
+  <button (click)="setCategory('Beast')">Beast</button>
+  <button (click)="setCategory('Celestial')">Celestial</button>
+  <button (click)="setCategory('Construct')">Construct</button>
+  <button (click)="setCategory('Dragon')">Dragon</button>
+  <button (click)="setCategory('Elemental')">Elemental</button>
+  <button (click)="setCategory('Fey')">Fey</button>
+  <button (click)="setCategory('Fiend')">Fiend</button>
+  <button (click)="setCategory('Giant')">Giant</button>
+  <button (click)="setCategory('Humanoid')">Humanoid</button>
+  <button (click)="setCategory('Monstrosity')">Monstrosity</button>
+  <button (click)="setCategory('Ooze')">Ooze</button>
+  <button (click)="setCategory('Plant')">Plant</button>
+  <button (click)="setCategory('Undead')">Undead</button>
+  <button (click)="setCategory('')">Clear</button>
+</mat-card-actions>
+
 <div class="bestiary">
   <div class="monsterWrapper">
     <mat-card class="example-card" *ngFor="let monster of monsters$ | async | monsterFilter: searchTerm let i = index">
