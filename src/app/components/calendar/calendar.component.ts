@@ -1,6 +1,6 @@
 import {Component, Injectable, OnInit, Inject} from '@angular/core';
-import {CalendarService} from '../services/calendar/calendar.service';
-import {Calendar} from '../services/calendar/calendar';
+import {CalendarService} from '../../services/calendar/calendar.service';
+import {Calendar} from '../../services/calendar/calendar';
 
 @Component({
   selector: 'app-calendar',

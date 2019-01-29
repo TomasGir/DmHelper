@@ -2,25 +2,25 @@ import {TestBed, async} from '@angular/core/testing';
 import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
-import {MainNavComponent} from './main-nav/main-nav.component';
-import {MenuComponent} from './menu/menu.component';
-import {DiceComponent} from './dice/dice.component';
+import {MainNavComponent} from './components/main-nav/main-nav.component';
+import {MenuComponent} from './components/menu/menu.component';
+import {DiceComponent} from './components/dice/dice.component';
 import {AppRoutingModule} from './app-routing.module';
-import {WorldComponent} from './world/world.component';
-import {MonstersComponent} from './monsters/monsters.component';
-import {MonsterFilterPipe} from './monsters/monster-filter.pipe';
-import {ItemsComponent} from './items/items.component';
-import {SpellsComponent} from './spells/spells.component';
-import {CombatComponent} from './combat/combat.component';
-import {CharactersComponent} from './characters/characters.component';
-import {MonsterDetailComponent} from './monster-detail/monster-detail.component';
-import {ItemFilterPipe} from './items/item-filter.pipe';
-import {ItemDetailsComponent} from './item-details/item-details.component';
-import {SpellFilterPipe} from './spells/spell-filter.pipe';
-import {SpellDetailsComponent} from './spell-details/spell-details.component';
-import {CalendarComponent} from './calendar/calendar.component';
+import {WorldComponent} from './components/world/world.component';
+import {MonstersComponent} from './components/monsters/monsters.component';
+import {MonsterFilterPipe} from './components/monsters/monster-filter.pipe';
+import {ItemsComponent} from './components/items/items.component';
+import {SpellsComponent} from './components/spells/spells.component';
+import {CombatComponent} from './components/combat/combat.component';
+import {CharactersComponent} from './components/characters/characters.component';
+import {MonsterDetailComponent} from './components/monster-detail/monster-detail.component';
+import {ItemFilterPipe} from './components/items/item-filter.pipe';
+import {ItemDetailsComponent} from './components/item-details/item-details.component';
+import {SpellFilterPipe} from './components/spells/spell-filter.pipe';
+import {SpellDetailsComponent} from './components/spell-details/spell-details.component';
+import {CalendarComponent} from './components/calendar/calendar.component';
 
-import {NpcComponent} from './npc/npc.component';
+import {NpcComponent} from './components/npc/npc.component';
 import {
   MatSidenav,
   MatToolbar,

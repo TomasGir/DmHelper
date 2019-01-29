@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {MonstersComponent} from './monsters/monsters.component';
-import {WorldComponent} from './world/world.component';
-import {NpcComponent} from './npc/npc.component';
-import {ItemsComponent} from './items/items.component';
-import {SpellsComponent} from './spells/spells.component';
-import {CombatComponent} from './combat/combat.component';
-import {CharactersComponent} from './characters/characters.component';
+import {MonstersComponent} from './components/monsters/monsters.component';
+import {WorldComponent} from './components/world/world.component';
+import {NpcComponent} from './components/npc/npc.component';
+import {ItemsComponent} from './components/items/items.component';
+import {SpellsComponent} from './components/spells/spells.component';
+import {CombatComponent} from './components/combat/combat.component';
+import {CharactersComponent} from './components/characters/characters.component';
 
 const routes: Routes = [
   {path: 'world', component: WorldComponent},

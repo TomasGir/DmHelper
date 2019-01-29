@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WorldComponent } from './world.component';
-import {CalendarComponent} from '../calendar/calendar.component';
+import {CalendarComponent} from '../components/calendar/calendar.component';
 import {HttpClientModule} from '@angular/common/http';
 
 describe('WorldComponent', () => {

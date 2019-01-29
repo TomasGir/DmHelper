@@ -1,37 +1,37 @@
 import {Component, OnInit} from '@angular/core';
 import {Injectable} from '@angular/core';
-import {Items} from '../services/item_service/items';
-import {ItemsService} from '../services/item_service/items.service';
+import {Spells} from '../../services/spell_service/spells';
+import {SpellsService} from '../../services/spell_service/spells.service';
 import {Sort} from '@angular/material';
 
 @Component({
-  selector: 'app-items',
-  templateUrl: './items.component.html',
-  styleUrls: ['./items.component.scss']
+  selector: 'app-spells',
+  templateUrl: './spells.component.html',
+  styleUrls: ['./spells.component.scss']
 })
 
 @Injectable()
-export class ItemsComponent implements OnInit {
+export class SpellsComponent implements OnInit {
 
-  items: Items[];
-  sortedData: Items[];
+  spells: Spells[];
+  sortedData: Spells[];
   searchTerm: string;
   send: object;
 
-  constructor(private itemsService: ItemsService) {
+  constructor(private spellsService: SpellsService) {
   }
 
-  getItems(): void {
-    this.itemsService.getItems()
-      .subscribe(item => this.items = this.sortedData = item);
+  getSpells(): void {
+    this.spellsService.getSpells()
+      .subscribe(spell => this.spells = this.sortedData = spell);
   }
 
   ngOnInit() {
-    this.getItems();
+    this.getSpells();
   }
 
   sortData(sort: Sort) {
-    const data = this.items.slice();
+    const data = this.spells.slice();
     if (!sort.active || sort.direction === '') {
       this.sortedData = data;
       return;
@@ -42,10 +42,10 @@ export class ItemsComponent implements OnInit {
       switch (sort.active) {
         case 'name':
           return compare(a.name, b.name, isAsc);
-        case 'cost':
-          return compare(a.cost.quantity, b.cost.quantity, isAsc);
-        case 'type':
-          return compare(a.equipment_category, b.equipment_category, isAsc);
+        case 'school':
+          return compare(a.school.name, b.school.name, isAsc);
+        case 'level':
+          return compare(a.level, b.level, isAsc);
         default:
           return 0;
       }
@@ -54,7 +54,7 @@ export class ItemsComponent implements OnInit {
 
   navigate(thing) {
     this.send = {};
-    this.send = this.items[thing - 1];
+    this.send = this.spells[thing - 1];
   }
 
 }

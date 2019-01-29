@@ -1,5 +1,5 @@
 import {PipeTransform, Pipe} from '@angular/core';
-import {Spells} from '../services/spell_service/spells';
+import {Spells} from '../../services/spell_service/spells';
 
 @Pipe({
   name: 'spellFilter'

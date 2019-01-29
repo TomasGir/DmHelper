@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {Monster} from '../services/monster_service/monster';
+import {Monster} from '../../services/monster_service/monster';
 
 @Pipe({
   name: 'matchesCategory'

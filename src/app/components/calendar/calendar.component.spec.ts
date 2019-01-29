@@ -11,8 +11,6 @@ import {FormsModule} from '@angular/forms';
 describe('CalendarComponent', () => {
   let component: CalendarComponent;
   let fixture: ComponentFixture<CalendarComponent>;
-  let debugElement: DebugElement;
-  let htmlElement: HTMLElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
