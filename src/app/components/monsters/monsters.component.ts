@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Injectable} from '@angular/core';
-import {Monster} from '../services/monster_service/monster';
+import {Monster} from '../../services/monster_service/monster';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
-import * as Past from '../post';
+import * as Past from '../../post';
 
 @Component({
   selector: 'app-monsters',
@@ -28,9 +28,8 @@ export class MonstersComponent implements OnInit {
     this.editState = false;
   }
 
-  navigate(thing) {
-    this.send = {};
-    this.send = thing;
+  navigate(dataObject) {
+    this.send = dataObject;
   }
 
   ngOnInit() {
