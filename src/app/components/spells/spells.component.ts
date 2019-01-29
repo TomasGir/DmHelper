@@ -30,6 +30,10 @@ export class SpellsComponent implements OnInit {
     this.getSpells();
   }
 
+  setCategory(category) {
+    this.searchTerm = category;
+  }
+
   sortData(sort: Sort) {
     const data = this.spells.slice();
     if (!sort.active || sort.direction === '') {

@@ -3,6 +3,18 @@
     <input matInput placeholder="Search" type="text" [(ngModel)]="searchTerm" name="spell">
   </mat-form-field>
 </form>
+
+<mat-card-actions>
+  <button (click)="setCategory('Bard')">Bard</button>
+  <button (click)="setCategory('Cleric')">Cleric</button>
+  <button (click)="setCategory('Druid')">Druid</button>
+  <button (click)="setCategory('Paladin')">Paladin</button>
+  <button (click)="setCategory('Ranger')">Ranger</button>
+  <button (click)="setCategory('Sorcerer')">Sorcerer</button>
+  <button (click)="setCategory('Wizard')">Wizard</button>
+  <button (click)="setCategory('')">Clear</button>
+</mat-card-actions>
+
 <div class="spellBook">
   <div class="spellWrapper">
     <table matSort (matSortChange)="sortData($event)">
