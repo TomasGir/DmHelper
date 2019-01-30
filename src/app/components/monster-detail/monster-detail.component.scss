@@ -1,3 +1,19 @@
+.punctuation {
+  width: 50%;
+  display: flex;
+
+  .line {
+    width: 100%;
+    border: 2px solid red;
+  }
+
+  .lineTip {
+    border-top: 2px solid transparent;
+    border-left: 20px solid red;
+    border-bottom: 2px solid transparent;
+  }
+}
+
 .monsterWrapper {
   .monsterCard {
 
@@ -36,17 +52,35 @@
       max-height: 100%;
     }
 
-    .monsterBattleStats {
-      span {
-        font-weight: bold;
-        color: brown;
-      }
-    }
-
     .monsterStats {
       .left {
         width: 50%;
         float: left;
+        .monsterBattleStats {
+          span {
+            font-weight: bold;
+            color: brown;
+          }
+        }
+        .monsterStatistics{
+
+        }
+        .monsterSaves{
+
+        }
+        .monsterAbilities{
+
+        }
+        .monsterResistance{
+
+        }
+        .monsterSenses{
+
+        }
+
+        .punctuation{
+          width: 80%;
+        }
       }
 
       .right {
@@ -62,23 +96,12 @@
       }
     }
 
-    .monsterAbilities {
-    }
-  }
+    .monsterActions{
 
-  .punctuation {
-    width: 50%;
-    display: flex;
-
-    .line {
-      width: 100%;
-      border: 2px solid red;
     }
 
-    .lineTip {
-      border-top: 2px solid transparent;
-      border-left: 20px solid red;
-      border-bottom: 2px solid transparent;
+    .monsterLegendaryActions{
+
     }
   }
 
