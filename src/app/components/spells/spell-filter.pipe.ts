@@ -10,15 +10,6 @@ export class SpellFilterPipe implements PipeTransform {
     if (!spells || !searchTerm) {
       return spells;
     }
-
-    spells.forEach(function (spell) {
-      const classes: any = spell.classes;
-      for (let i = 0; i < classes.length; i++) {
-        if (searchTerm === classes[i].name) {
-          console.log(spell.name);
-        }
-      }
-    });
     const nameFilter = spells.filter(spell =>
       spell.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
     const classFilter = spells.filter(spell => {
