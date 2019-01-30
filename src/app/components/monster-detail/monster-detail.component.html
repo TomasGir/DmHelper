@@ -83,18 +83,18 @@
           <div class="lineTip"></div>
         </div>
         <div class="monsterResistance">
-          <p *ngIf="parentData.damage_vulnerabilities">Vulnerabilities
+          <p *ngIf="parentData.damage_vulnerabilities"><span>Vulnerabilities</span>
             - {{parentData.damage_vulnerabilities}}</p>
-          <p *ngIf="parentData.damage_resistances">Resistances - {{parentData.damage_resistances}}</p>
-          <p *ngIf="parentData.condition_immunities">Immunities - {{parentData.condition_immunities}}</p>
+          <p *ngIf="parentData.damage_resistances"><span>Resistances</span> - {{parentData.damage_resistances}}</p>
+          <p *ngIf="parentData.condition_immunities"><span>Immunities</span> - {{parentData.condition_immunities}}</p>
         </div>
         <div class="punctuation" *ngIf="parentData.damage_vulnerabilities">
           <div class="line"></div>
           <div class="lineTip"></div>
         </div>
         <div class="monsterSenses">
-          <p *ngIf="parentData.senses">Sences - {{parentData.senses}}</p>
-          <p *ngIf="parentData.languages">Languages - {{parentData.languages}}</p>
+          <p *ngIf="parentData.senses"><span>Sences</span> - {{parentData.senses}}</p>
+          <p *ngIf="parentData.languages"><span>Languages</span> - {{parentData.languages}}</p>
         </div>
         <div class="punctuation">
           <div class="line"></div>
