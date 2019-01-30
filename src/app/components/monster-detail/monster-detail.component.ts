@@ -7,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class MonsterDetailComponent implements OnInit {
 
-  @Input() childMessage: string;
+  @Input() parentData: string;
   editState: boolean;
 
   constructor() {
