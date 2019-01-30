@@ -7,6 +7,7 @@
 
       .monsterHeaderTop {
         display: flex;
+
         h1 {
           text-align: left;
           color: brown;
@@ -42,8 +43,26 @@
       }
     }
 
-    .monsterPowers {
+    .monsterStats {
+      .left {
+        width: 50%;
+        float: left;
+      }
 
+      .right {
+        width: 50%;
+        float: right;
+      }
+    }
+
+    .monsterPowersWrapper {
+      clear: both;
+      .monsterPowers {
+
+      }
+    }
+
+    .monsterAbilities {
     }
   }
 
@@ -76,11 +95,11 @@
   }
 }
 
-::ng-deep .mat-input-wrapper{
-  width:400px !important;
+::ng-deep .mat-input-wrapper {
+  width: 400px !important;
 }
 
-::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex{
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
   padding: 0;
   width: 150px;
 }
