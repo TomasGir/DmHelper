@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import * as  MonsterActions from './post/actions/monster.actions';
-import * as Past from './post';
+import * as  MonsterActions from './state_management/actions/monster.actions';
+import * as Past from './state_management';
 import {Observable} from 'rxjs';
 import {Store} from '@ngrx/store';
 

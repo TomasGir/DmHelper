@@ -27,9 +27,9 @@ import {ItemDetailsComponent} from './components/item-details/item-details.compo
 import {CalendarComponent} from './components/calendar/calendar.component';
 
 import {StoreModule} from '@ngrx/store';
-import {MonsterReducer} from './post';
+import {MonsterReducer} from './state_management';
 import {EffectsModule} from '@ngrx/effects';
-import {MonsterEffects} from './post';
+import {MonsterEffects} from './state_management';
 
 
 @NgModule({

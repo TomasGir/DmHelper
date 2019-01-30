@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core';
 import {Monster} from '../../services/monster_service/monster';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
-import * as Past from '../../post';
+import * as Past from '../../state_management';
 
 @Component({
   selector: 'app-monsters',
