@@ -4,6 +4,10 @@ import {Spells} from '../../services/spell_service/spells';
 import {SpellsService} from '../../services/spell_service/spells.service';
 import {Sort} from '@angular/material';
 
+import {Store} from '@ngrx/store';
+import {Observable} from 'rxjs';
+import * as Past from '../../state_management';
+
 @Component({
   selector: 'app-spells',
   templateUrl: './spells.component.html',
@@ -14,16 +18,20 @@ import {Sort} from '@angular/material';
 export class SpellsComponent implements OnInit {
 
   spells: Spells[];
+  spells$: Observable<Spells[]>;
   sortedData: Spells[];
   searchTerm: string;
   send: object;
 
-  constructor(private spellsService: SpellsService) {
+  constructor(
+    private spellsService: SpellsService,
+    private store: Store<Past.Post>) {
   }
 
   getSpells(): void {
     this.spellsService.getSpells()
       .subscribe(spell => this.spells = this.sortedData = spell);
+    this.spells$ = this.store.select(Past.getAllSpells);
   }
 
   ngOnInit() {
@@ -46,8 +54,8 @@ export class SpellsComponent implements OnInit {
       switch (sort.active) {
         case 'name':
           return compare(a.name, b.name, isAsc);
-        case 'school':
-          return compare(a.school.name, b.school.name, isAsc);
+        // case 'school':
+        //   return compare(a.school.name, b.school.name, isAsc);
         case 'level':
           return compare(a.level, b.level, isAsc);
         default:

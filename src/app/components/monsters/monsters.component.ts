@@ -18,13 +18,11 @@ export class MonstersComponent implements OnInit {
   searchTerm: string;
   send: object;
 
-  post: Observable<Past.Post>;
   text: object;
   editState: boolean;
 
   constructor(
     private store: Store<Past.Post>) {
-    this.post = this.store.select('post');
     this.editState = false;
   }
 

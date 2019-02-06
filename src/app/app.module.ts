@@ -28,8 +28,10 @@ import {CalendarComponent} from './components/calendar/calendar.component';
 
 import {StoreModule} from '@ngrx/store';
 import {MonsterReducer} from './state_management';
+import {SpellReducer} from './state_management';
 import {EffectsModule} from '@ngrx/effects';
 import {MonsterEffects} from './state_management';
+import {SpellEffects} from './state_management';
 
 
 @NgModule({
@@ -61,10 +63,11 @@ import {MonsterEffects} from './state_management';
     AppRoutingModule,
     HttpClientModule,
     StoreModule.forRoot({
-      post: MonsterReducer
+      post2: MonsterReducer,
+      post1: SpellReducer
     }),
-    EffectsModule.forRoot([MonsterEffects]),
-    EffectsModule.forFeature([MonsterEffects])
+    EffectsModule.forRoot([MonsterEffects, SpellEffects]),
+    EffectsModule.forFeature([MonsterEffects, SpellEffects])
   ],
   exports: [
     CustomModuleModule

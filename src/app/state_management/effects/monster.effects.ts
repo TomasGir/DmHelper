@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Effect, Actions, ofType} from '@ngrx/effects';
-import * as PostActions from '../actions/monster.actions';
+import * as MonsterActions from '../actions/monster.actions';
 import { map, switchMap, catchError} from 'rxjs/operators';
 import {MonsterService} from '../../services/monster_service/monster.service';
 import {of} from 'rxjs';
@@ -15,12 +15,12 @@ export class MonsterEffects {
 
   @Effect()
   loadMonsters$ = this.actions$
-    .pipe(ofType(PostActions.LOAD_DATA),
+    .pipe(ofType(MonsterActions.LOAD_MONSTER_DATA),
       switchMap(() => {
         return this.monsterService.getMonsters()
           .pipe(
-            map(monster => new PostActions.LoadDataSuccess(monster)),
-            catchError(err => of(new PostActions.LoadDataFail(err)))
+            map(monster => new MonsterActions.LoadMonsterDataSuccess(monster)),
+            catchError(err => of(new MonsterActions.LoadMonsterDataFail(err)))
           );
       })
     );

@@ -15,22 +15,35 @@
   <button (click)="setCategory('')">Clear</button>
 </mat-card-actions>
 
+
+<!--<div *ngFor="let spell of spells$ | async">-->
+  <!--<div>{{spell.name}}</div>-->
+  <!--<div *ngFor="let spells of spell.school | keyvalue">-->
+    <!--<p *ngIf="spells.key === 'name'">{{spells.value}}</p>-->
+  <!--</div>-->
+<!--</div>-->
+
 <div class="spellBook">
   <div class="spellWrapper">
     <table matSort (matSortChange)="sortData($event)">
       <tr>
         <th mat-sort-header="name">Name</th>
         <th mat-sort-header="level">Level</th>
-        <th mat-sort-header="school">School</th>
+        <!--<th mat-sort-header="school">School</th>-->
         <th>Components</th>
         <th>Ritual</th>
         <th>Concentration</th>
       </tr>
 
-      <tr *ngFor="let spell of sortedData | spellFilter: searchTerm" (click)="navigate(spell.index)">
+      <tr *ngFor="let spell of spells$ | async | spellFilter: searchTerm" (click)="navigate(spell.index)"
+          class="spell_row">
         <td>{{spell.name}}</td>
         <td>{{spell.level}}</td>
-        <td>{{spell.school.name}}</td>
+        <td>
+          <div *ngFor="let spells of spell.school | keyvalue">
+            <span *ngIf="spells.key === 'name'">{{spells.value}}</span>
+          </div>
+        </td>
         <td>{{spell.components}}</td>
         <td>{{spell.ritual}}</td>
         <td>{{spell.concentration}}</td>

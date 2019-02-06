@@ -9,12 +9,12 @@ const defaultState = {
 
 export function MonsterReducer(state = defaultState, action: Action) {
   switch (action.type) {
-    case StateActions.LOAD_DATA:
+    case StateActions.LOAD_MONSTER_DATA:
       return {...state};
-    case StateActions.LOAD_DATA_SUCCESS:
+    case StateActions.LOAD_MONSTER_DATA_SUCCESS:
       const text = action.payload;
-      return {...state, text};
-    case StateActions.LOAD_DATA_FAIL:
+      return {...state};
+    case StateActions.LOAD_MONSTER_DATA_FAIL:
       return {...state};
     default:
       return state;
@@ -22,5 +22,5 @@ export function MonsterReducer(state = defaultState, action: Action) {
 }
 
 export const getMonsters = (state) => state.text;
-export const getMonsterState = createFeatureSelector('post');
+export const getMonsterState = createFeatureSelector('post2');
 export const getAllMonsters = createSelector(getMonsterState, getMonsters);
