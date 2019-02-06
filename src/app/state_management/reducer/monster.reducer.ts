@@ -13,7 +13,7 @@ export function MonsterReducer(state = defaultState, action: Action) {
       return {...state};
     case StateActions.LOAD_MONSTER_DATA_SUCCESS:
       const text = action.payload;
-      return {...state};
+      return {...state, text};
     case StateActions.LOAD_MONSTER_DATA_FAIL:
       return {...state};
     default:
