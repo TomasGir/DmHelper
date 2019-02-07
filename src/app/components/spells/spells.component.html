@@ -15,7 +15,6 @@
   <button (click)="setCategory('')">Clear</button>
 </mat-card-actions>
 
-
 <!--<div *ngFor="let spell of spells$ | async">-->
   <!--<div>{{spell.name}}</div>-->
   <!--<div *ngFor="let spells of spell.school | keyvalue">-->
@@ -35,7 +34,7 @@
         <th>Concentration</th>
       </tr>
 
-      <tr *ngFor="let spell of spells$ | async | spellFilter: searchTerm" (click)="navigate(spell.index)"
+      <tr *ngFor="let spell of sortedData | spellFilter: searchTerm" (click)="navigate(spell.index)"
           class="spell_row">
         <td>{{spell.name}}</td>
         <td>{{spell.level}}</td>

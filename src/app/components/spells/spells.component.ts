@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Injectable} from '@angular/core';
 import {Spells} from '../../services/spell_service/spells';
-import {SpellsService} from '../../services/spell_service/spells.service';
 import {Sort} from '@angular/material';
 
 import {Store} from '@ngrx/store';
@@ -22,20 +21,15 @@ export class SpellsComponent implements OnInit {
   sortedData: Spells[];
   searchTerm: string;
   send: object;
+  something: any;
 
   constructor(
-    private spellsService: SpellsService,
     private store: Store<Past.Post>) {
   }
 
-  getSpells(): void {
-    this.spellsService.getSpells()
-      .subscribe(spell => this.spells = this.sortedData = spell);
-    this.spells$ = this.store.select(Past.getAllSpells);
-  }
-
   ngOnInit() {
-    this.getSpells();
+    this.spells$ = this.store.select(Past.getAllSpells);
+    this.spells$.subscribe(val => this.sortedData = val);
   }
 
   setCategory(category) {
@@ -43,24 +37,26 @@ export class SpellsComponent implements OnInit {
   }
 
   sortData(sort: Sort) {
-    const data = this.spells.slice();
-    if (!sort.active || sort.direction === '') {
-      this.sortedData = data;
-      return;
-    }
-
-    this.sortedData = data.sort((a, b) => {
-      const isAsc = sort.direction === 'asc';
-      switch (sort.active) {
-        case 'name':
-          return compare(a.name, b.name, isAsc);
-        // case 'school':
-        //   return compare(a.school.name, b.school.name, isAsc);
-        case 'level':
-          return compare(a.level, b.level, isAsc);
-        default:
-          return 0;
+    this.spells$.subscribe(val => {
+      const data = val.slice();
+      if (!sort.active || sort.direction === '') {
+        this.sortedData = data;
+        return;
       }
+
+      this.sortedData = data.sort((a, b) => {
+        const isAsc = sort.direction === 'asc';
+        switch (sort.active) {
+          case 'name':
+            return compare(a.name, b.name, isAsc);
+          // case 'school':
+          //   return compare(a.school.name, b.school.name, isAsc);
+          case 'level':
+            return compare(a.level, b.level, isAsc);
+          default:
+            return 0;
+        }
+      });
     });
   }
 

@@ -4,7 +4,7 @@ import {createFeatureSelector, createSelector} from '@ngrx/store';
 export type SpellAction = StateActions.AllSpells;
 
 const defaultState = {
-  text: [{name: 'Acid Arrow'}]
+  text: []
 };
 
 export function SpellReducer(state = defaultState, action: SpellAction) {
