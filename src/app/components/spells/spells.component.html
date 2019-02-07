@@ -28,13 +28,13 @@
       <tr>
         <th mat-sort-header="name">Name</th>
         <th mat-sort-header="level">Level</th>
-        <!--<th mat-sort-header="school">School</th>-->
+        <th mat-sort-header="school">School</th>
         <th>Components</th>
         <th>Ritual</th>
         <th>Concentration</th>
       </tr>
 
-      <tr *ngFor="let spell of sortedData | spellFilter: searchTerm" (click)="navigate(spell.index)"
+      <tr *ngFor="let spell of sortedData | spellFilter: searchTerm" (click)="navigate(spell)"
           class="spell_row">
         <td>{{spell.name}}</td>
         <td>{{spell.level}}</td>

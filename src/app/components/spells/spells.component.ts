@@ -49,8 +49,8 @@ export class SpellsComponent implements OnInit {
         switch (sort.active) {
           case 'name':
             return compare(a.name, b.name, isAsc);
-          // case 'school':
-          //   return compare(a.school.name, b.school.name, isAsc);
+          case 'school':
+            return compare(a.school.name, b.school.name, isAsc);
           case 'level':
             return compare(a.level, b.level, isAsc);
           default:
@@ -62,7 +62,7 @@ export class SpellsComponent implements OnInit {
 
   navigate(thing) {
     this.send = {};
-    this.send = this.spells[thing - 1];
+    this.send = thing;
   }
 
 }
