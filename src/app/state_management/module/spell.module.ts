@@ -1,5 +1,5 @@
 import {Spells} from '../../services/spell_service/spells';
 
 export interface SpellModule {
-  text: Spells[];
+  data: Spells[];
 }

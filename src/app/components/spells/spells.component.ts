@@ -16,15 +16,13 @@ import * as Past from '../../state_management';
 @Injectable()
 export class SpellsComponent implements OnInit {
 
-  spells: Spells[];
   spells$: Observable<Spells[]>;
   sortedData: Spells[];
   searchTerm: string;
   send: object;
-  something: any;
 
   constructor(
-    private store: Store<Past.Post>) {
+    private store: Store<Past.SpellModule>) {
   }
 
   ngOnInit() {

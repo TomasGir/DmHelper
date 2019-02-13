@@ -1,8 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {Injectable} from '@angular/core';
 import {Items} from '../../services/item_service/items';
-import {ItemsService} from '../../services/item_service/items.service';
 import {Sort} from '@angular/material';
+
+import {Store} from '@ngrx/store';
+import {Observable} from 'rxjs';
+import * as StateManager from '../../state_management';
 
 @Component({
   selector: 'app-items',
@@ -13,17 +16,19 @@ import {Sort} from '@angular/material';
 @Injectable()
 export class ItemsComponent implements OnInit {
 
-  items: Items[];
+  items$: Observable<Items[]>;
   sortedData: Items[];
   searchTerm: string;
   send: object;
 
-  constructor(private itemsService: ItemsService) {
+  constructor(
+    private store: Store<StateManager.ItemModule>
+  ) {
   }
 
   getItems(): void {
-    this.itemsService.getItems()
-      .subscribe(item => this.items = this.sortedData = item);
+    this.items$ = this.store.select(StateManager.getAllItems);
+    this.items$.subscribe(val => this.sortedData = val);
   }
 
   ngOnInit() {
@@ -31,7 +36,8 @@ export class ItemsComponent implements OnInit {
   }
 
   sortData(sort: Sort) {
-    const data = this.items.slice();
+    this.items$.subscribe( val => {
+    const data = val.slice();
     if (!sort.active || sort.direction === '') {
       this.sortedData = data;
       return;
@@ -50,11 +56,12 @@ export class ItemsComponent implements OnInit {
           return 0;
       }
     });
+    });
   }
 
   navigate(thing) {
     this.send = {};
-    this.send = this.items[thing - 1];
+    this.send = thing;
   }
 
 }

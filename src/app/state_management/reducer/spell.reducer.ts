@@ -4,7 +4,7 @@ import {createFeatureSelector, createSelector} from '@ngrx/store';
 export type SpellAction = StateActions.AllSpells;
 
 const defaultState = {
-  text: []
+  data: []
 };
 
 export function SpellReducer(state = defaultState, action: SpellAction) {
@@ -12,8 +12,8 @@ export function SpellReducer(state = defaultState, action: SpellAction) {
     case StateActions.LOAD_SPELL_DATA:
       return {...state};
     case StateActions.LOAD_SPELL_DATA_SUCCESS:
-      const text = action.payload;
-      return {...state, text};
+      const data = action.payload;
+      return {...state, data};
     case StateActions.LOAD_SPELL_DATA_FAIL:
       return {...state};
     default:
@@ -21,6 +21,6 @@ export function SpellReducer(state = defaultState, action: SpellAction) {
   }
 }
 
-export const getSpells = (state) => state.text;
+export const getSpells = (state) => state.data;
 export const getSpellState = createFeatureSelector('post1');
 export const getAllSpells = createSelector(getSpellState, getSpells);

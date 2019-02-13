@@ -11,16 +11,12 @@
         <th mat-sort-header="name">Name</th>
         <th mat-sort-header="cost">Cost</th>
         <th mat-sort-header="type">Type</th>
-        <th>Damage</th>
-        <th>2h Damage</th>
       </tr>
 
-      <tr *ngFor="let item of sortedData | itemFilter: searchTerm" (click)="navigate(item.index)">
+      <tr *ngFor="let item of sortedData | itemFilter: searchTerm" (click)="navigate(item)">
         <td>{{item.name}}</td>
         <td>{{item.cost.quantity}} {{item.cost.unit}}</td>
-        <td>{{item.equipment_category}} {{item.weapon_category}} {{item.category_range}}</td>
-        <td *ngIf="item.damage">{{item.damage.dice_count}}d{{item.damage.dice_value}}</td>
-        <td *ngIf="item.two_handed_damage">{{item.two_handed_damage.dice_count}}d{{item.two_handed_damage.dice_value}}</td>
+        <td>{{item.equipment_category}} {{item.category_range}}</td>
       </tr>
     </table>
   </div>

@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
 })
 export class SpellsService {
 
-  private spellsUrl = 'assets/spells/5e-SRD-Spells.json';
+  private spellsUrl = '/assets/spells/5e-SRD-Spells.json';
 
   constructor(private httpService: HttpClient) {
   }

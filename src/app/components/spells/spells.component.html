@@ -15,13 +15,6 @@
   <button (click)="setCategory('')">Clear</button>
 </mat-card-actions>
 
-<!--<div *ngFor="let spell of spells$ | async">-->
-  <!--<div>{{spell.name}}</div>-->
-  <!--<div *ngFor="let spells of spell.school | keyvalue">-->
-    <!--<p *ngIf="spells.key === 'name'">{{spells.value}}</p>-->
-  <!--</div>-->
-<!--</div>-->
-
 <div class="spellBook">
   <div class="spellWrapper">
     <table matSort (matSortChange)="sortData($event)">

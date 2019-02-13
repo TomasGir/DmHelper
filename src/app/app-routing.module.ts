@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {CommonModule} from '@angular/common';
 import {MonstersComponent} from './components/monsters/monsters.component';
 import {WorldComponent} from './components/world/world.component';
 import {NpcComponent} from './components/npc/npc.component';
@@ -20,8 +21,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  exports: [RouterModule],
-  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule, CommonModule],
+  imports: [CommonModule, RouterModule.forRoot(routes, {useHash: true})],
   declarations: []
 })
 export class AppRoutingModule { }

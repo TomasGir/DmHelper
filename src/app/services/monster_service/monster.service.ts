@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
 })
 export class MonsterService {
 
-  private monsterUrl = 'assets/monsters/5e-SRD-Monsters.json';
+  private monsterUrl = '/assets/monsters/5e-SRD-Monsters.json';
 
   constructor(private httpService: HttpClient) {
   }

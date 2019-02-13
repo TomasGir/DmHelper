@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class CalendarService {
-  private calendarUrl = 'assets/calendar/calendar.json';
+  private calendarUrl = '/assets/calendar/calendar.json';
 
   constructor(private httpService: HttpClient) {
   }

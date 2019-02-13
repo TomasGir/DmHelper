@@ -9,12 +9,8 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 export class CombatComponent {
 
   participants = [
-    'Ally 1',
-    'Ally 2',
-    'Ally 3',
-    'Ally 4',
-    'Enemy 1',
-    'Enemy 2'
+    {name: 'Ally 1', initiative: 2},
+    {name: 'Ally 2', initiative: 10}
   ];
 
   drop(event: CdkDragDrop<string[]>) {

@@ -9,7 +9,7 @@ import {Observable} from 'rxjs';
 })
 export class ItemsService {
 
-  private itemsUrl = 'assets/items/5e-SRD-Equipment.json';
+  private itemsUrl = '/assets/items/5e-SRD-Equipment.json';
 
   constructor(private httpService: HttpClient) {
   }

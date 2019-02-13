@@ -4,7 +4,7 @@ import {createFeatureSelector, createSelector} from '@ngrx/store';
 export type Action = StateActions.All;
 
 const defaultState = {
-  text: []
+  data: []
 };
 
 export function MonsterReducer(state = defaultState, action: Action) {
@@ -12,8 +12,8 @@ export function MonsterReducer(state = defaultState, action: Action) {
     case StateActions.LOAD_MONSTER_DATA:
       return {...state};
     case StateActions.LOAD_MONSTER_DATA_SUCCESS:
-      const text = action.payload;
-      return {...state, text};
+      const data = action.payload;
+      return {...state, data};
     case StateActions.LOAD_MONSTER_DATA_FAIL:
       return {...state};
     default:
@@ -21,6 +21,6 @@ export function MonsterReducer(state = defaultState, action: Action) {
   }
 }
 
-export const getMonsters = (state) => state.text;
+export const getMonsters = (state) => state.data;
 export const getMonsterState = createFeatureSelector('post2');
 export const getAllMonsters = createSelector(getMonsterState, getMonsters);

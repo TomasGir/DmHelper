@@ -9,8 +9,7 @@
   <p *ngIf="childMessage.duration">Duration - {{childMessage.duration}}</p>
   <p *ngIf="childMessage.concentration">Concentration - {{childMessage.concentration}}</p>
   <p *ngIf="childMessage.casting_time">Casting time - {{childMessage.casting_time}}</p>
-  <p *ngIf="childMessage.level">childMessage level - {{childMessage.level}}</p>
-  <p *ngIf="childMessage.school">School name - {{childMessage.school.name}}</p>
+  <p *ngIf="childMessage.level">Level - {{childMessage.level}}</p>
   <div *ngFor="let classes of childMessage.classes">
     <p>Class - {{classes.name}}</p>
   </div>
