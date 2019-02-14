@@ -1,5 +1,5 @@
 import {Monster} from '../../services/monster_service/monster';
 
-export interface Post {
+export interface MonsterModel {
   text: Monster[];
 }

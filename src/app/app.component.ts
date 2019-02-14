@@ -13,12 +13,12 @@ import {Store} from '@ngrx/store';
 })
 export class AppComponent implements OnInit {
   title = 'dmhelper';
-  post2: Observable<Past.Post>;
+  post2: Observable<Past.MonsterModel>;
   post1: Observable<Past.SpellModule>;
   itemObs: Observable<Past.ItemModule>;
 
   constructor(
-    private store: Store<Past.Post>,
+    private store: Store<Past.MonsterModel>,
     private stores: Store<Past.SpellModule>,
     private itemStore: Store<Past.ItemModule>) {
   }

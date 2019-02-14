@@ -22,7 +22,7 @@ export class MonstersComponent implements OnInit {
   editState: boolean;
 
   constructor(
-    private store: Store<Past.Post>) {
+    private store: Store<Past.MonsterModel>) {
     this.editState = false;
   }
 
