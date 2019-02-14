@@ -22,5 +22,5 @@ export function ItemReducer(state = defaultState, action: ItemAction) {
 }
 
 export const getItems = (state) => state.data;
-export const getItemState = createFeatureSelector('itemObs');
+export const getItemState = createFeatureSelector('itemReducer');
 export const getAllItems = createSelector(getItemState, getItems);

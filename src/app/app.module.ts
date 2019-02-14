@@ -65,9 +65,9 @@ import {ItemEffects} from './state_management';
     AppRoutingModule,
     HttpClientModule,
     StoreModule.forRoot({
-      post2: MonsterReducer,
-      post1: SpellReducer,
-      itemObs: ItemReducer
+      monsterReducer: MonsterReducer,
+      spellReducer: SpellReducer,
+      itemReducer: ItemReducer
     }),
     EffectsModule.forRoot([MonsterEffects, SpellEffects, ItemEffects]),
     EffectsModule.forFeature([MonsterEffects, SpellEffects, ItemEffects])

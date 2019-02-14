@@ -22,5 +22,5 @@ export function SpellReducer(state = defaultState, action: SpellAction) {
 }
 
 export const getSpells = (state) => state.data;
-export const getSpellState = createFeatureSelector('post1');
+export const getSpellState = createFeatureSelector('spellReducer');
 export const getAllSpells = createSelector(getSpellState, getSpells);

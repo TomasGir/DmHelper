@@ -13,9 +13,9 @@ import {Store} from '@ngrx/store';
 })
 export class AppComponent implements OnInit {
   title = 'dmhelper';
-  post2: Observable<Past.MonsterModel>;
-  post1: Observable<Past.SpellModule>;
-  itemObs: Observable<Past.ItemModule>;
+  monsterReducer: Observable<Past.MonsterModel>;
+  spellReducer: Observable<Past.SpellModule>;
+  itemReducer: Observable<Past.ItemModule>;
 
   constructor(
     private store: Store<Past.MonsterModel>,

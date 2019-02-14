@@ -22,5 +22,5 @@ export function MonsterReducer(state = defaultState, action: Action) {
 }
 
 export const getMonsters = (state) => state.data;
-export const getMonsterState = createFeatureSelector('post2');
+export const getMonsterState = createFeatureSelector('monsterReducer');
 export const getAllMonsters = createSelector(getMonsterState, getMonsters);
