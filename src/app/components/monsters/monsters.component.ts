@@ -1,9 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {Injectable} from '@angular/core';
+import {Component, OnInit, Injectable} from '@angular/core';
 import {Monster} from '../../services/monster_service/monster';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
-import * as Past from '../../state_management';
+import * as State from '../../state_management';
 
 @Component({
   selector: 'app-monsters',
@@ -22,7 +21,7 @@ export class MonstersComponent implements OnInit {
   editState: boolean;
 
   constructor(
-    private store: Store<Past.MonsterModel>) {
+    private store: Store<State.MonsterModel>) {
     this.editState = false;
   }
 
@@ -35,6 +34,6 @@ export class MonstersComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.monsters$ = this.store.select(Past.getAllMonsters);
+    this.monsters$ = this.store.select(State.getAllMonsters);
   }
 }
