@@ -27,13 +27,10 @@ import {ItemDetailsComponent} from './components/item-details/item-details.compo
 import {CalendarComponent} from './components/calendar/calendar.component';
 
 import {StoreModule} from '@ngrx/store';
-import {MonsterReducer} from './state_management';
-import {SpellReducer} from './state_management';
-import {ItemReducer} from './state_management';
+import {MonsterReducer, SpellReducer, ItemReducer} from './state_management';
+import {reducer} from './state_management/reducer/combat.reducer';
 import {EffectsModule} from '@ngrx/effects';
-import {MonsterEffects} from './state_management';
-import {SpellEffects} from './state_management';
-import {ItemEffects} from './state_management';
+import {MonsterEffects, SpellEffects, ItemEffects} from './state_management';
 
 
 @NgModule({
@@ -67,7 +64,8 @@ import {ItemEffects} from './state_management';
     StoreModule.forRoot({
       monsterReducer: MonsterReducer,
       spellReducer: SpellReducer,
-      itemReducer: ItemReducer
+      itemReducer: ItemReducer,
+      tutorial: reducer
     }),
     EffectsModule.forRoot([MonsterEffects, SpellEffects, ItemEffects]),
     EffectsModule.forFeature([MonsterEffects, SpellEffects, ItemEffects])

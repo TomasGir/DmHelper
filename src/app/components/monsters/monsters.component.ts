@@ -3,6 +3,7 @@ import {Monster} from '../../services/monster_service/monster';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
 import * as State from '../../state_management';
+import * as CombatActions from '../../state_management/actions/combat.action';
 
 @Component({
   selector: 'app-monsters',
@@ -31,6 +32,10 @@ export class MonstersComponent implements OnInit {
 
   setCategory(category) {
     this.searchTerm = category;
+  }
+
+  addCombatant(name) {
+    this.store.dispatch(new CombatActions.AddTutorial(name));
   }
 
   ngOnInit() {

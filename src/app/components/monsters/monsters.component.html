@@ -41,14 +41,17 @@
       <mat-card-content>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-raised-button color="warn">Add combat</button>
+        <button mat-raised-button color="warn" (click)="addCombatant(monster)">
+        Add combat
+        </button>
         <button mat-raised-button>Add story</button>
       </mat-card-actions>
     </mat-card>
   </div>
-  <div class="details-wrapper">
-    <div class="detail">
-      <app-monster-detail [parentData]="send"></app-monster-detail>
-    </div>
+  <div class=" details-wrapper
+        ">
+        <div class="detail">
+          <app-monster-detail [parentData]="send"></app-monster-detail>
+        </div>
   </div>
 </div>
