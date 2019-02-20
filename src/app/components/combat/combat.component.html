@@ -1,6 +1,6 @@
 <h1>Initiative order</h1>
-<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-  <div class="example-box" *ngFor="let fighters of tutorials | async" cdkDrag>
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)" *ngIf="!isEmpty">
+  <div class="example-box" *ngFor="let fighters of combatants | async" cdkDrag>
     {{fighters.name}}
     {{fighters.armor_class}}
     {{fighters.strength}}
@@ -10,4 +10,10 @@
     {{fighters.wisdom}}
     {{fighters.charisma}}
   </div>
+</div>
+<div class="left">
+
+  <input type="text" placeholder="name" #name>
+
+  <button (click)="addCombatant(name.value)">Add a Combatant</button>
 </div>

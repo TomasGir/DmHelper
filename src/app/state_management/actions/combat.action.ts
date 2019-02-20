@@ -1,13 +1,12 @@
 import {Action} from '@ngrx/store';
-import {Combatants} from '../module/combat.module';
 
-export const ADD_TUTORIAL = '[TUTORIAL] Add';
+export const ADD_COMBATANT = '[TUTORIAL] Add';
 
-export class AddTutorial implements Action {
-  readonly type = ADD_TUTORIAL;
+export class AddCombatant implements Action {
+  readonly type = ADD_COMBATANT;
 
-  constructor(public payload: Combatants) {
+  constructor(public payload: any) {
   }
 }
 
-export type Actions = AddTutorial;
+export type Actions = AddCombatant;

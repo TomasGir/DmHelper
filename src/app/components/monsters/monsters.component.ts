@@ -35,7 +35,7 @@ export class MonstersComponent implements OnInit {
   }
 
   addCombatant(name) {
-    this.store.dispatch(new CombatActions.AddTutorial(name));
+    this.store.dispatch(new CombatActions.AddCombatant(name));
   }
 
   ngOnInit() {

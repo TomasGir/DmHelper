@@ -14,19 +14,33 @@ import * as CombatActions from '../../state_management/actions/combat.action';
 })
 export class CombatComponent implements OnInit {
 
+  isEmpty = true;
+  obj: any = {};
+
   constructor(private store: Store<AppState>) {
-    this.tutorials = store.select('tutorial');
+    this.combatants = store.select('combatReducer');
   }
 
-  tutorials: Observable<Combatants[]>;
+  combatants: Observable<Combatants[]>;
 
   drop(event: CdkDragDrop<string[]>) {
-    this.tutorials.subscribe(val => {
+    this.combatants.subscribe(val => {
       moveItemInArray(val, event.previousIndex, event.currentIndex);
     });
   }
 
+  addCombatant(data) {
+    this.obj['name'] = data;
+    this.store.dispatch(new CombatActions.AddCombatant(this.obj));
+    this.obj = {};
+  }
+
   ngOnInit() {
+    this.combatants.subscribe(val => {
+      if (val.length > 0) {
+        this.isEmpty = false;
+      }
+    });
   }
 
 }

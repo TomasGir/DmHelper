@@ -65,7 +65,7 @@ import {MonsterEffects, SpellEffects, ItemEffects} from './state_management';
       monsterReducer: MonsterReducer,
       spellReducer: SpellReducer,
       itemReducer: ItemReducer,
-      tutorial: reducer
+      combatReducer: reducer
     }),
     EffectsModule.forRoot([MonsterEffects, SpellEffects, ItemEffects]),
     EffectsModule.forFeature([MonsterEffects, SpellEffects, ItemEffects])

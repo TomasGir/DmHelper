@@ -4,7 +4,7 @@ import * as TutorialActions from './../actions/combat.action';
 export function reducer(state: Combatants[] = [], action: TutorialActions.Actions) {
 
   switch (action.type) {
-    case TutorialActions.ADD_TUTORIAL:
+    case TutorialActions.ADD_COMBATANT:
       return [...state,  action.payload];
     default:
       return state;
